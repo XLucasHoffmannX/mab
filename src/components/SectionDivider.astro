@@ -1,0 +1,143 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<div class={`w-full overflow-hidden leading-none ${className}`}>
+  <svg
+    class="w-full h-12 md:h-16 text-blue-100/50"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    viewBox="0 0 1200 60"
+  >
+    <defs>
+      <pattern
+        id="diagonalHatch"
+        width="10"
+        height="10"
+        patternTransform="rotate(45 0 0)"
+        patternUnits="userSpaceOnUse"
+      >
+        <line
+          x1="0"
+          y1="0"
+          x2="0"
+          y2="10"
+          style="stroke: currentColor; stroke-width: 1"></line>
+      </pattern>
+    </defs>
+
+    {/* Top Line */}
+    <line
+      x1="0"
+      y1="10"
+      x2="1200"
+      y2="10"
+      stroke="currentColor"
+      stroke-width="1"></line>
+
+    {/* Bottom Line */}
+    <line
+      x1="0"
+      y1="50"
+      x2="1200"
+      y2="50"
+      stroke="currentColor"
+      stroke-width="1"></line>
+
+    {/* Main Filled Area with Hatching */}
+    <rect
+      x="100"
+      y="10"
+      width="1000"
+      height="40"
+      fill="url(#diagonalHatch)"
+      opacity="0.3"></rect>
+
+    {/* End Caps / Nodes */}
+    <circle cx="100" cy="10" r="3" fill="currentColor"></circle>
+    <circle cx="1100" cy="10" r="3" fill="currentColor"></circle>
+    <circle cx="100" cy="50" r="3" fill="currentColor"></circle>
+    <circle cx="1100" cy="50" r="3" fill="currentColor"></circle>
+
+    {/* Vertical Ticks */}
+    <line
+      x1="150"
+      y1="50"
+      x2="150"
+      y2="40"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="200"
+      y1="50"
+      x2="200"
+      y2="35"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="250"
+      y1="50"
+      x2="250"
+      y2="40"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="300"
+      y1="50"
+      x2="300"
+      y2="35"
+      stroke="currentColor"
+      stroke-width="1"></line>
+
+    <line
+      x1="900"
+      y1="50"
+      x2="900"
+      y2="35"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="950"
+      y1="50"
+      x2="950"
+      y2="40"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="1000"
+      y1="50"
+      x2="1000"
+      y2="35"
+      stroke="currentColor"
+      stroke-width="1"></line>
+    <line
+      x1="1050"
+      y1="50"
+      x2="1050"
+      y2="40"
+      stroke="currentColor"
+      stroke-width="1"></line>
+
+    {/* Dotted lines */}
+    <line
+      x1="0"
+      y1="30"
+      x2="90"
+      y2="30"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-dasharray="4 4"></line>
+    <line
+      x1="1110"
+      y1="30"
+      x2="1200"
+      y2="30"
+      stroke="currentColor"
+      stroke-width="1"
+      stroke-dasharray="4 4"></line>
+  </svg>
+</div>

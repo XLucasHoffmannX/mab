@@ -1,33 +1,67 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero";
-import AboutSection from "../components/AboutSection";
-import SolutionsSection from "../components/SolutionsSection";
+import AboutSection from "../components/AboutSection.astro";
+import SolutionsSection from "../components/SolutionsSection.astro";
 import VideoSection from "../components/VideoSection";
-import SoftwarePresentation from "../components/SoftwarePresentation";
-import SectionDivider from "../components/SectionDivider";
-import ContactSection from "../components/ContactSection";
+import SoftwarePresentation from "../components/SoftwarePresentation.astro";
+import SectionDivider from "../components/SectionDivider.astro";
+import ContactSection from "../components/ContactSection.astro";
 import Footer from "../components/Footer.astro";
+
+import { getImage } from "astro:assets";
+import layout1 from "../assets/layout1.jpeg";
+import layout2 from "../assets/layout2.jpeg";
+import layout3 from "../assets/layout3.jpeg";
+
+const optimizedLayout1 = await getImage({
+  src: layout1,
+  format: "webp",
+  width: 1200,
+});
+const optimizedLayout2 = await getImage({
+  src: layout2,
+  format: "webp",
+  width: 1200,
+});
+const optimizedLayout3 = await getImage({
+  src: layout3,
+  format: "webp",
+  width: 1200,
+});
+
+const heroImages = [
+  optimizedLayout1.src,
+  optimizedLayout2.src,
+  optimizedLayout3.src,
+];
+
+import yahwe from "../assets/yahwe.png";
+const optimizedYahwe = await getImage({
+  src: yahwe,
+  format: "webp",
+  width: 800,
+});
 ---
 
 <MainLayout title="MAB Fortuna | Inovação e Tecnologia Têxtil">
-  <Hero client:load />
+  <Hero client:load images={heroImages} />
 
-  <SolutionsSection client:visible />
+  <SolutionsSection />
 
-  <SectionDivider client:visible className="text-gray-200" />
+  <SectionDivider className="text-gray-200" />
 
   <VideoSection client:visible />
 
-  <SectionDivider client:visible className="text-gray-200" />
+  <SectionDivider className="text-gray-200" />
 
-  <SoftwarePresentation client:visible />
+  <SoftwarePresentation />
 
-  <SectionDivider client:visible className="text-gray-200" />
+  <SectionDivider className="text-gray-200" />
 
-  <AboutSection client:visible />
+  <AboutSection image={optimizedYahwe.src} />
 
-  <ContactSection client:visible />
+  <ContactSection />
 
   <Footer />
 </MainLayout>

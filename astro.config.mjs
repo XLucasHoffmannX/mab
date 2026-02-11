@@ -9,10 +9,14 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-
+  compressHTML: true,
+  prefetch: true,
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 500,
+    }
   },
-
   adapter: vercel()
 });

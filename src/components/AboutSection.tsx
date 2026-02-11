@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle2, Users, Rocket, Globe, Target } from "lucide-react";
 import yahweImg from "../assets/yahwe.png";
 
-const AboutSection = () => {
+const AboutSection = ({ image }: { image: string }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,7 +78,7 @@ const AboutSection = () => {
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-100 to-blue-50 rounded-full blur-3xl opacity-60 scale-90" />
 
             <img
-              src={yahweImg.src}
+              src={image}
               alt="MAB Fortuna Technology"
               className="relative w-full max-w-md h-auto object-contain drop-shadow-xl z-10"
             />

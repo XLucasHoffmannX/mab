@@ -4,6 +4,8 @@ import videoSrc from "../assets/BANNER-SITE-video-2.mp4";
 
 const VideoSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = React.useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,6 +15,24 @@ const VideoSection = () => {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.9, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   const borderRadius = useTransform(scrollYProgress, [0, 0.5], ["60px", "0px"]);
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" },
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
@@ -50,14 +70,21 @@ const VideoSection = () => {
           {/* Subtle Overlay to integrate with the light background */}
           <div className="absolute inset-0 z-10 bg-linear-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
 
-          <video
-            src={videoSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-          />
+          {isVisible ? (
+            <video
+              ref={videoRef}
+              src={videoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-100 flex items-center justify-center">
+              <div className="w-8 h-8 border-4 border-[#322783]/20 border-t-[#322783] rounded-full animate-spin" />
+            </div>
+          )}
 
           {/* Floating Detail Elements */}
           <div className="absolute inset-0 z-20 pointer-events-none flex items-center justify-center">
@@ -73,8 +100,6 @@ const VideoSection = () => {
             </motion.div>
           </div>
         </motion.div>
-
-        {/* Caption */}
       </div>
     </section>
   );

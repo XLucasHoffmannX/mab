@@ -4,21 +4,16 @@ import { ArrowRight, Zap, ShieldCheck, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 
-import layout1 from "../assets/layout1.jpeg";
-import layout2 from "../assets/layout2.jpeg";
-import layout3 from "../assets/layout3.jpeg";
-
-const images = [layout1.src, layout2.src, layout3.src];
-
-const Hero = () => {
+const Hero = ({ images }: { images: string[] }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
+    if (!images || images.length === 0) return;
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [images]);
 
   const textVariants = {
     hidden: { opacity: 0, y: 20 },

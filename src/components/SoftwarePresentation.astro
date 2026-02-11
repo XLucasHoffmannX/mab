@@ -1,0 +1,211 @@
+---
+import { PenTool, Maximize, Type, Settings, Printer } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+interface Props {
+  // no props
+}
+---
+
+<section
+  class="relative w-full min-h-[800px] flex items-center justify-center overflow-hidden bg-[#fafafa] py-24 px-4 soft-reveal"
+>
+  {/* Background Decor */}
+  <div class="absolute inset-0 z-0">
+    <div
+      class="absolute inset-0 h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-70"
+    >
+    </div>
+    {/* Subtle Background Orbs */}
+    <div
+      class="absolute top-1/4 -left-20 w-80 h-80 bg-[#322783]/5 rounded-full blur-[100px] animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/4 -right-20 w-80 h-80 bg-[#5b4dbe]/5 rounded-full blur-[100px] animate-pulse"
+    >
+    </div>
+  </div>
+
+  <div class="container relative z-10 px-4">
+    <div
+      class="relative mx-auto max-w-5xl min-h-[650px] flex flex-col items-center justify-center"
+    >
+      {/* Floating Badges */}
+      <div
+        class="floating-badge absolute -top-10 left-0 md:top-0 md:-left-24 z-30"
+        style="--d: 0s"
+      >
+        <div class="badge-content">
+          <div class="icon-wrap"><PenTool className="size-4" /></div>
+          <span>CorelDraw Incluso</span>
+        </div>
+      </div>
+      <div
+        class="floating-badge absolute top-10 right-0 md:top-20 md:-right-24 z-30"
+        style="--d: 1.5s"
+      >
+        <div class="badge-content">
+          <div class="icon-wrap"><Maximize className="size-4" /></div>
+          <span>Controle de Vetores</span>
+        </div>
+      </div>
+      <div
+        class="floating-badge absolute -bottom-16 left-4 md:bottom-32 md:-left-20 z-30"
+        style="--d: 0.8s"
+      >
+        <div class="badge-content">
+          <div class="icon-wrap"><Type className="size-4" /></div>
+          <span>+200 Fontes</span>
+        </div>
+      </div>
+      <div
+        class="floating-badge absolute -bottom-32 right-4 md:bottom-10 md:-right-16 z-30"
+        style="--d: 2.2s"
+      >
+        <div class="badge-content">
+          <div class="icon-wrap"><Settings className="size-4" /></div>
+          <span>Digitalização Profissional</span>
+        </div>
+      </div>
+      <div
+        class="floating-badge absolute -top-24 left-1/2 -translate-x-1/2 md:-top-28 z-30"
+        style="--d: 1.2s"
+      >
+        <div class="badge-content">
+          <div class="icon-wrap"><Printer className="size-4" /></div>
+          <span>Suporte a Corte</span>
+        </div>
+      </div>
+
+      {/* Central Content */}
+      <div
+        class="relative z-20 text-center space-y-8 max-w-3xl mx-auto backdrop-blur-xl bg-white/40 p-8 md:p-12 rounded-[2.5rem] border border-white/60 shadow-2xl shadow-[#322783]/5 reveal-content"
+      >
+        <div>
+          <Badge
+            variant="outline"
+            className="bg-white/80 backdrop-blur-sm border-[#322783]/20 text-[#322783] mb-6 px-5 py-1.5 text-xs font-black uppercase tracking-widest shadow-sm"
+          >
+            MAB Fortuna
+          </Badge>
+        </div>
+
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-gray-900 leading-[1.1]"
+        >
+          Software de Bordado Profissional:
+          <span
+            class="block mt-4 relative text-transparent bg-clip-text bg-linear-to-r from-[#322783] via-[#5b4dbe] to-[#322783] bg-size-[200%_auto] animate-[shimmer_4s_infinite] italic pb-2"
+          >
+            A Nova Era da Digitalização
+          </span>
+        </h2>
+
+        <p
+          class="text-lg md:text-xl text-gray-500 max-w-xl mx-auto leading-relaxed font-medium italic"
+        >
+          Uma solução completa para{" "}
+          <span class="text-gray-900 font-black not-italic">
+            bordados personalizados
+          </span>
+          . Tenha controle total de digitalização com maior definição de pontos e
+          ferramentas de design líderes de mercado.
+        </p>
+
+        <div class="pt-6">
+          <Button
+            size="lg"
+            className="bg-[#322783] cursor-pointer hover:bg-[#2a216e] text-white rounded-2xl px-10 h-16 text-base font-black shadow-xl shadow-[#322783]/20 transition-all hover:scale-105 active:scale-95"
+            asChild
+          >
+            <a href="/contato">Agendar Demonstração</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .floating-badge {
+    animation: float 4s ease-in-out infinite;
+    animation-delay: var(--d);
+  }
+
+  .badge-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s;
+  }
+
+  .badge-content:hover {
+    transform: scale(1.05);
+    border-color: rgba(50, 39, 131, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(50, 39, 131, 0.1);
+  }
+
+  .icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background-color: rgba(50, 39, 131, 0.1);
+    color: #322783;
+  }
+
+  .floating-badge span {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #1f2937;
+    white-space: nowrap;
+  }
+
+  .reveal-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s ease-out 0.2s;
+  }
+
+  .active .reveal-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.1 },
+  );
+
+  const section = document.querySelector(".soft-reveal");
+  if (section) observer.observe(section);
+</script>
