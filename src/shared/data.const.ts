@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     brand: "Mab Fortuna",
     category: "Sala de Corte",
     subCategory: "Laser",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/07/Bordadeira-Barudan-BEKT-S1501CBIII-555x555.png",
   },
   {
     id: "sc-02",
@@ -55,7 +55,7 @@ export const PRODUCTS: Product[] = [
     brand: "Mab Fortuna",
     category: "Sala de Corte",
     subCategory: "Enfesto",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/Plotter-de-impressao-Weltplotter-imagem-555x555.jpg",
   },
   {
     id: "sc-04",
@@ -63,7 +63,7 @@ export const PRODUCTS: Product[] = [
     brand: "Mab Fortuna",
     category: "Sala de Corte",
     subCategory: "Laser",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/Bordadeira-Barudan-BEKY-Y906HII-555x555.png",
   },
 
   // --- BORDADO (Imagem 1) ---
@@ -73,7 +73,7 @@ export const PRODUCTS: Product[] = [
     brand: "Barudan",
     category: "Bordado",
     subCategory: "Industrial",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/Bordadeira-Barudan-BEKS-CL-Chenille-555x555.png",
   },
 
   // --- COSTURA - JACK (Imagens 2 e 3) ---
@@ -83,7 +83,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Reta",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/Bordadeira-Barudan-BEKS-Y912-%E2%80%9DJ%E2%80%9D-1-555x555.png",
   },
   {
     id: "co-02",
@@ -91,7 +91,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Reta",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/07/Bordadeira-Barudan-BEKT-S1501CBIII-2-555x555.png",
   },
   {
     id: "co-03",
@@ -99,7 +99,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Reta",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/C-1008-AB-555x331.jpg",
   },
   {
     id: "co-04",
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Overloque",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/modelo-hslc-555x331.jpg",
   },
   {
     id: "co-05",
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Overloque",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/yahwe-555x312.png",
   },
   {
     id: "co-06",
@@ -123,7 +123,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Galoneira",
-    img: "",
+    img: "https://mabfortuna.com.br/wp-content/uploads/2017/09/yahwe-555x312.png",
   },
   {
     id: "co-07",
@@ -131,7 +131,7 @@ export const PRODUCTS: Product[] = [
     brand: "Jack",
     category: "Costura",
     subCategory: "Especiais",
-    img: "",
+    img: "https://mabfortuna.com.br/produto/maquina-de-corte-a-laser-ca-1610-2-bab/",
   },
   {
     id: "co-08",

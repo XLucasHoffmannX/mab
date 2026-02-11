@@ -103,14 +103,8 @@ export default function Navbar() {
             </SheetContent>
           </Sheet>
 
-          <a
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2"
-          >
+          <a href="/" className="absolute left-1/2 -translate-x-1/2">
             <img src={logo.src} alt="MAB Logo" className="h-8 w-auto" />
-            <span className="text-white font-black uppercase tracking-tighter text-sm">
-              MAB Fortuna
-            </span>
           </a>
 
           <div className="flex items-center justify-end w-10">
@@ -146,15 +140,8 @@ export default function Navbar() {
 
         {/* Logo (Centered Desktop) */}
         <div className="hidden md:flex flex-none justify-center">
-          <a href="/" className="flex items-center gap-3 group">
-            <img
-              src={logo.src}
-              alt="MAB Logo"
-              className="h-10 md:h-12 w-auto transition-transform group-hover:scale-110"
-            />
-            <span className="text-white font-black uppercase tracking-tighter text-lg md:text-xl">
-              MAB Fortuna
-            </span>
+          <a href="/">
+            <img src={logo.src} alt="MAB Logo" className="h-8 md:h-10 w-auto" />
           </a>
         </div>
 
