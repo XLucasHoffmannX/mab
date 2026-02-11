@@ -1,0 +1,28 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero";
+import AboutSection from "../components/AboutSection";
+import SolutionsSection from "../components/SolutionsSection";
+import SoftwarePresentation from "../components/SoftwarePresentation";
+import SectionDivider from "../components/SectionDivider";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer.astro";
+---
+
+<MainLayout title="MAB Fortuna | Inovação e Tecnologia Têxtil">
+  <Hero client:load />
+
+  <SolutionsSection client:visible />
+
+  <SectionDivider client:visible className="text-gray-200" />
+
+  <SoftwarePresentation client:visible />
+
+  <SectionDivider client:visible className="text-gray-200" />
+
+  <AboutSection client:visible />
+
+  <ContactSection client:visible />
+
+  <Footer />
+</MainLayout>

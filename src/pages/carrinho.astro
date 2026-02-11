@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ShoppingCart from "../components/ShoppingCart";
+---
+
+<MainLayout
+  title="Seu Orçamento | MAB Fortuna"
+  description="Revise seus itens e solicite um orçamento técnico especializado."
+>
+  <div
+    class="relative min-h-screen w-full bg-white overflow-hidden pt-32 pb-20"
+  >
+    {/* Subtle Dot Background */}
+    <div
+      class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+      style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 32px 32px;"
+    >
+    </div>
+
+    <div class="container mx-auto max-w-5xl px-4 relative z-10">
+      <ShoppingCart client:only="react" />
+    </div>
+  </div>
+</MainLayout>

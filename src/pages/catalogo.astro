@@ -1,0 +1,39 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ProductList from "../components/ProductList";
+import { PRODUCTS } from "../shared/data.const";
+import Footer from "../components/Footer.astro";
+---
+
+<MainLayout
+  title="Catálogo de Equipamentos | MAB Fortuna"
+  description="Explore nossa linha completa de bordadeiras, máquinas de corte a laser e costura industrial."
+>
+  <div
+    class="relative min-h-screen w-full bg-white overflow-hidden pt-32 pb-20"
+  >
+    {/* Subtle Dot Background */}
+    <div
+      class="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+      style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 32px 32px;"
+    >
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="mb-12 text-center max-w-2xl mx-auto">
+        <h1
+          class="text-4xl md:text-5xl font-black text-gray-900 mb-4 uppercase tracking-tighter"
+        >
+          Nossos <span class="text-[#322783]">Equipamentos</span>
+        </h1>
+        <p class="text-gray-500 text-lg leading-relaxed">
+          Selecione os equipamentos de seu interesse para solicitar um orçamento
+          técnico personalizado.
+        </p>
+      </div>
+
+      <ProductList client:load products={PRODUCTS} />
+    </div>
+  </div>
+  <Footer />
+</MainLayout>

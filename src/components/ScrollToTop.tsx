@@ -1,0 +1,48 @@
+import { useState, useEffect } from "react";
+import { ArrowUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function ScrollToTop() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Toggle visibility based on scroll position
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  // Scroll to top smoothly
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.5, y: 20 }}
+          transition={{ duration: 0.3 }}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 rounded-full bg-primary p-3 text-primary-foreground shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+          aria-label="Ir para o topo"
+        >
+          <ArrowUp className="h-6 w-6" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+}

@@ -1,0 +1,66 @@
+---
+import { cn } from "@/lib/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  reversed?: boolean;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt = "Feature image",
+  reversed = false,
+} = Astro.props;
+---
+
+<section class="w-full py-24 md:py-32 bg-background">
+  <div class="container mx-auto px-4">
+    <div
+      class={cn(
+        "flex flex-col gap-12 lg:gap-24 items-center",
+        reversed ? "lg:flex-row-reverse" : "lg:flex-row",
+      )}
+    >
+      <!-- Text Content -->
+      <div class="flex-1 space-y-6 text-center lg:text-left">
+        <h2
+          class="text-3xl md:text-5xl font-bold tracking-tight text-foreground"
+        >
+          {title}
+        </h2>
+        <p
+          class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0"
+        >
+          {description}
+        </p>
+        <slot name="cta" />
+      </div>
+
+      <!-- Image/Visual Content -->
+      <div class="flex-1 w-full max-w-xl">
+        <div
+          class="aspect-square relative rounded-3xl overflow-hidden bg-muted flex items-center justify-center border border-border"
+        >
+          {
+            image ? (
+              <img
+                src={image}
+                alt={imageAlt}
+                class="object-cover w-full h-full"
+              />
+            ) : (
+              <span class="text-muted-foreground text-sm">
+                Feature Visual Placeholder
+              </span>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

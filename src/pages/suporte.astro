@@ -1,0 +1,13 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SupportPage from "@/components/SupportPage";
+import Footer from "@/components/Footer.astro";
+---
+
+<MainLayout
+  title="Suporte Técnico | MAB Fortuna"
+  description="Assistência técnica especializada com mais de 25 anos de experiência no setor têxtil. Suporte para Barudan e Automatisa."
+>
+  <SupportPage client:load />
+  <Footer />
+</MainLayout>

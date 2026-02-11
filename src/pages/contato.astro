@@ -1,0 +1,13 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import ContactPage from "@/components/ContactPage";
+import Footer from "@/components/Footer.astro";
+---
+
+<MainLayout
+  title="Contato | MAB Fortuna"
+  description="Entre em contato com a MAB Fortuna. Soluções em tecnologia têxtil em Apucarana - PR."
+>
+  <ContactPage client:load />
+  <Footer />
+</MainLayout>
