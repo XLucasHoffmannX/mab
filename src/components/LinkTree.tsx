@@ -47,7 +47,7 @@ const links = [
 const socials = [
   { icon: <Mail />, href: "mailto:contato@mabfortuna.com.br" },
   { icon: <Youtube />, href: "https://youtube.com/@mabfortuna" },
-  { icon: <MessageCircle />, href: "https://wa.me/5543999740457" },
+  { icon: <MessageCircle />, href: "https://wa.me/5543996809107" },
 ];
 
 export default function LinkTree() {
@@ -208,7 +208,7 @@ export default function LinkTree() {
           className="mt-16 w-full px-2 lg:px-0"
         >
           <a
-            href="https://wa.me/5543999740457"
+            href="https://wa.me/5543996809107"
             target="_blank"
             rel="noopener noreferrer"
             className="block"

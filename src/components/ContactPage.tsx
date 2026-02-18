@@ -177,7 +177,7 @@ const ContactPage = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a
-              href="https://wa.me/5543999740457"
+              href="https://wa.me/5543996809107"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"
@@ -500,7 +500,7 @@ const ContactPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="https://wa.me/5543999740457"
+              href="https://wa.me/5543996809107"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto"

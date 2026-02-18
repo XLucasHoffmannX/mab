@@ -431,7 +431,10 @@ const SupportPage = () => {
               className="bg-[#a855f7] hover:bg-[#7c3aed] text-white rounded-full px-10 h-14 text-lg font-bold group shadow-xl shadow-[#a855f7]/20"
               asChild
             >
-              <a href="https://wa.me/5543999740457" target="_blank">
+              <a
+                href="https://wa.me/5543996809107?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20suporte%20t%C3%A9cnico."
+                target="_blank"
+              >
                 Falar com um técnico
                 <Zap className="w-5 h-5 ml-2 fill-current" />
               </a>

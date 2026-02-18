@@ -55,7 +55,7 @@ export default function ShoppingCart() {
         .join("%0A") +
       `%0A%0A_Enviado via Catálogo Online_`;
 
-    window.open(`https://wa.me/5543999740457?text=${message}`, "_blank");
+    window.open(`https://wa.me/5543996809107?text=${message}`, "_blank");
     clearCart();
     setStep("list");
   };
