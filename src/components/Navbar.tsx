@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, ShoppingCart } from "lucide-react";
-import logo from "../assets/logo-mab.png";
+import logo from "../assets/logo_mab_new.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,9 +69,7 @@ export default function Navbar() {
                     hidden: { opacity: 0, x: -20 },
                     visible: { opacity: 1, x: 0 },
                   }}
-                >
-                  <img src={logo.src} alt="MAB Logo" className="h-8 w-auto" />
-                </motion.a>
+                ></motion.a>
                 {[...navLinksLeft, ...navLinksRight].map((link) => (
                   <motion.a
                     key={link.name}
@@ -104,7 +102,7 @@ export default function Navbar() {
           </Sheet>
 
           <a href="/" className="absolute left-1/2 -translate-x-1/2">
-            <img src={logo.src} alt="MAB Logo" className="h-8 w-auto" />
+            <img src={logo.src} alt="MAB Logo" className="h-26 w-auto" />
           </a>
 
           <div className="flex items-center justify-end w-10">
@@ -141,7 +139,7 @@ export default function Navbar() {
         {/* Logo (Centered Desktop) */}
         <div className="hidden md:flex flex-none justify-center">
           <a href="/">
-            <img src={logo.src} alt="MAB Logo" className="h-8 md:h-10 w-auto" />
+            <img src={logo.src} alt="MAB Logo" className="h-8 md:h-32 w-auto" />
           </a>
         </div>
 
